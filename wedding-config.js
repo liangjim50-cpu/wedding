@@ -26,11 +26,11 @@ window.WEDDING_CONFIG = {
   },
   mapUrl: "https://uri.amap.com/search?keyword=%E6%88%90%E9%83%BD%E7%BE%A4%E5%85%89%E5%90%9B%E6%82%A6%E9%85%92%E5%BA%97",
   sections: [
-    { src: "assets/section-01.webp", alt: "罗密欧与祝英台婚礼邀请封面" },
-    { src: "assets/section-02.webp", alt: "遇见你与甜蜜时光", softSeams: [0.262] },
-    { src: "assets/section-03-v2.webp", alt: "携手与婚礼安排" },
-    { src: "assets/section-05.webp", alt: "我们的婚礼时光" },
-    { src: "assets/section-07.webp", alt: "感谢见证我们的幸福" },
-    { src: "assets/section-04.webp", alt: "成都婚礼地点、日期与酒店信息", finalHotel: true }
+    { src: "assets/section-01.webp", width: 750, height: 2600, alt: "罗密欧与祝英台婚礼邀请封面" },
+    { src: "assets/section-02.webp", width: 750, height: 2600, alt: "遇见你与甜蜜时光", softSeams: [0.262] },
+    { src: "assets/section-03-v2.webp", width: 750, height: 1600, alt: "携手与婚礼安排" },
+    { src: "assets/section-05.webp", width: 750, height: 2700, alt: "我们的婚礼时光" },
+    { src: "assets/section-07.webp", width: 750, height: 2160, alt: "感谢见证我们的幸福" },
+    { src: "assets/section-04.webp", width: 750, height: 2600, alt: "成都婚礼地点、日期与酒店信息", finalHotel: true }
   ]
 };

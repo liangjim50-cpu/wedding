@@ -40,12 +40,12 @@
 </head>
 <body>
   <main class="h5">
-    <section class="panel revealed"><picture><img src="assets/section-01.webp" alt="罗密欧与祝英台婚礼邀请封面"></picture><i class="paper-glow"></i></section>
-    <section class="panel observe"><picture><img loading="lazy" src="assets/section-02.webp" alt="遇见你与甜蜜时光"></picture><i class="paper-glow"></i></section>
-    <section class="panel observe"><picture><img loading="lazy" src="assets/section-03-v2.webp" alt="携手与婚礼安排"></picture><i class="paper-glow"></i></section>
-    <section class="panel observe"><picture><img loading="lazy" src="assets/section-05.webp" alt="我们的婚礼时光"></picture><i class="paper-glow"></i></section>
-    <section class="panel observe"><picture><img loading="lazy" src="assets/section-07.webp" alt="感谢见证我们的幸福"></picture><i class="paper-glow"></i></section>
-    <section class="panel observe" data-final-hotel><picture><img loading="lazy" src="assets/section-04.webp" alt="成都婚礼地点、日期与酒店信息"></picture><a class="map-hotspot" href="https://uri.amap.com/search?keyword=%E6%88%90%E9%83%BD%E7%BE%A4%E5%85%89%E5%90%9B%E6%82%A6%E9%85%92%E5%BA%97" target="_blank" rel="noopener" aria-label="导航到成都群光君悦酒店">导航</a><i class="paper-glow"></i></section>
+    <section class="panel revealed"><picture><img src="assets/section-01.webp" width="750" height="2600" fetchpriority="high" alt="罗密欧与祝英台婚礼邀请封面"></picture><i class="paper-glow"></i></section>
+    <section class="panel observe"><picture><img loading="eager" src="assets/section-02.webp" width="750" height="2600" alt="遇见你与甜蜜时光"></picture><i class="paper-glow"></i></section>
+    <section class="panel observe"><picture><img loading="eager" src="assets/section-03-v2.webp" width="750" height="1600" alt="携手与婚礼安排"></picture><i class="paper-glow"></i></section>
+    <section class="panel observe"><picture><img loading="eager" src="assets/section-05.webp" width="750" height="2700" alt="我们的婚礼时光"></picture><i class="paper-glow"></i></section>
+    <section class="panel observe"><picture><img loading="eager" src="assets/section-07.webp" width="750" height="2160" alt="感谢见证我们的幸福"></picture><i class="paper-glow"></i></section>
+    <section class="panel observe" data-final-hotel><picture><img loading="eager" src="assets/section-04.webp" width="750" height="2600" alt="成都婚礼地点、日期与酒店信息"></picture><a class="map-hotspot" href="https://uri.amap.com/search?keyword=%E6%88%90%E9%83%BD%E7%BE%A4%E5%85%89%E5%90%9B%E6%82%A6%E9%85%92%E5%BA%97" target="_blank" rel="noopener" aria-label="导航到成都群光君悦酒店">导航</a><i class="paper-glow"></i></section>
   </main>
   <audio id="bgm" src="assets/wedding-music-full.mp3" preload="metadata" playsinline loop></audio>
   <button class="round-control auto-control" id="auto-control" type="button" aria-label="继续自动滑动"><svg viewBox="0 0 24 24" aria-hidden="true"><path id="auto-icon" d="M8 5v14l11-7z"/></svg></button>
@@ -59,7 +59,7 @@
       const config=window.WEDDING_CONFIG||{},panels=[...document.querySelectorAll('.panel')];
       if(config.page?.title)document.title=config.page.title;
       if(config.page?.shareDescription){document.querySelector('meta[name="description"]')?.setAttribute('content',config.page.shareDescription);document.querySelector('meta[property="og:description"]')?.setAttribute('content',config.page.shareDescription)}
-      (config.sections||[]).forEach((item,index)=>{const panel=panels[index],img=panel?.querySelector('picture>img');if(!panel||!img)return;img.src=item.src;img.alt=item.alt||'';if(item.finalHotel)panel.setAttribute('data-final-hotel','');(item.softSeams||[]).forEach(position=>{const seam=document.createElement('i');seam.className='soft-seam';seam.style.top=`${position*100}%`;panel.append(seam)})});
+      (config.sections||[]).forEach((item,index)=>{const panel=panels[index],img=panel?.querySelector('picture>img');if(!panel||!img)return;img.loading='eager';img.src=item.src;img.alt=item.alt||'';if(item.width)img.width=item.width;if(item.height)img.height=item.height;if(item.finalHotel)panel.setAttribute('data-final-hotel','');(item.softSeams||[]).forEach(position=>{const seam=document.createElement('i');seam.className='soft-seam';seam.style.top=`${position*100}%`;panel.append(seam)})});
       const configuredMap=document.querySelector('.map-hotspot');if(configuredMap&&config.mapUrl)configuredMap.href=config.mapUrl;
       if(!reduced){
         const roseLayer=document.createElement('div'),rosePlan=[
